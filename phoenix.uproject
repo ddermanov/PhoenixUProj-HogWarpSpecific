@@ -103,7 +103,7 @@
 	"Plugins": [
         {
 			"Name": "UnrealPSKPSA",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "BinkMedia",
