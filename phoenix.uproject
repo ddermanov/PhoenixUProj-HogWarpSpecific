@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{D6CD33AA-48FB-A06F-36C7-98A13E3ACC37}",
+	"EngineAssociation": "{0CBBE5C3-45F1-6A6B-EEDF-35B18ED6EF2D}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -101,13 +101,13 @@
 		}
 	],
 	"Plugins": [
-        {
+		{
 			"Name": "UnrealPSKPSA",
 			"Enabled": false
 		},
 		{
 			"Name": "BinkMedia",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "BTCustom",

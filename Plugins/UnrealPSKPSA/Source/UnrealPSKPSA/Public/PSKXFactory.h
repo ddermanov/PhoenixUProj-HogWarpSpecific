@@ -1,17 +1,15 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-#pragma once
+﻿#pragma once
 
 #include "CoreMinimal.h"
-#include "PSKXFactory.generated.h"
+#include "Factories/Factory.h"
+#include "PskxFactory.generated.h"
 
 UCLASS()
-class UNREALPSKPSA_API UPSKXFactory : public UFactory
+class UNREALPSKPSA_API UPskxFactory : public UFactory
 {
 	GENERATED_BODY()
-	
 public:
-	UPSKXFactory()
+	UPskxFactory()
 	{
 		bEditorImport = true;
 		bText = false;
@@ -21,11 +19,13 @@ public:
 		SupportedClass = FactoryClass;
 	}
 	
-	UObject* Import(const FString Filename, UObject* Parent, const FName Name, const EObjectFlags Flags) const;
-	
+	static UObject* Import(const FString& Filename, UObject* Parent, const FName Name, const EObjectFlags Flags, TMap<FString, FString>
+						   MaterialNameToPathMap);
+
+protected:
 	UClass* FactoryClass = UStaticMesh::StaticClass();
 	FString FactoryExtension = "pskx";
-	FString FactoryDescription = "ActorX Static Mesh";
+	FString FactoryDescription = "Unreal Static Mesh";
 
 	virtual bool FactoryCanImport(const FString& Filename) override
 	{
@@ -35,7 +35,6 @@ public:
 	
 	virtual UObject* FactoryCreateFile(UClass* InClass, UObject* InParent, FName InName, EObjectFlags Flags, const FString& Filename, const TCHAR* Params, FFeedbackContext* Warn, bool& bOutOperationCanceled) override
 	{
-		return Import(Filename, InParent, FName(*InName.ToString().Replace(TEXT("_LOD0"), TEXT(""))), Flags);
+		return Import(Filename, InParent, FName(*InName.ToString().Replace(TEXT("_LOD0"), TEXT(""))), Flags, TMap<FString, FString>());
 	}
-
 };

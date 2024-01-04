@@ -1,8 +1,10 @@
-﻿// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "UnrealPSKPSA.h"
 
 #define LOCTEXT_NAMESPACE "FUnrealPSKPSAModule"
+
+DEFINE_LOG_CATEGORY(LogUnrealPSKPSA);
 
 void FUnrealPSKPSAModule::StartupModule()
 {
