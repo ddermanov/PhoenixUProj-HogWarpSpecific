@@ -1,17 +1,15 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "Factories/Factory.h"
-#include "PSKFactory.generated.h"
+#include "PskFactory.generated.h"
 
 UCLASS()
-class UNREALPSKPSA_API UPSKFactory : public UFactory
+class UNREALPSKPSA_API UPskFactory : public UFactory
 {
 	GENERATED_BODY()
 public:
-	UPSKFactory()
+	UPskFactory()
 	{
 		bEditorImport = true;
 		bText = false;
@@ -21,16 +19,17 @@ public:
 		SupportedClass = FactoryClass;
 	}
 	
-	UObject* Import(const FString Filename, UObject* Parent, const FName Name, const EObjectFlags Flags) const;
+	static UObject* Import(const FString& Filename, UObject* Parent, const FName Name, const EObjectFlags Flags, TMap<FString, FString>
+	                       MaterialNameToPathMap);
 	static void ProcessSkeleton(const FSkeletalMeshImportData&    ImportData,
-	                            const USkeleton*                  Skeleton,
-	                            FReferenceSkeleton&               OutRefSkeleton,
-	                            int32&                            OutSkeletalDepth);
-	
+								const USkeleton*                  Skeleton,
+								FReferenceSkeleton&               OutRefSkeleton,
+								int32&                            OutSkeletalDepth);
+
 protected:
 	UClass* FactoryClass = USkeletalMesh::StaticClass();
 	FString FactoryExtension = "psk";
-	FString FactoryDescription = "ActorX Skeletal Mesh";
+	FString FactoryDescription = "Unreal Skeletal Mesh";
 
 	virtual bool FactoryCanImport(const FString& Filename) override
 	{
@@ -40,7 +39,7 @@ protected:
 	
 	virtual UObject* FactoryCreateFile(UClass* InClass, UObject* InParent, FName InName, EObjectFlags Flags, const FString& Filename, const TCHAR* Params, FFeedbackContext* Warn, bool& bOutOperationCanceled) override
 	{
-		return Import(Filename, InParent, FName(*InName.ToString().Replace(TEXT("_LOD0"), TEXT(""))), Flags);
+		return Import(Filename, InParent, FName(*InName.ToString().Replace(TEXT("_LOD0"), TEXT(""))), Flags, TMap<FString, FString>());
 	}
-
+	
 };

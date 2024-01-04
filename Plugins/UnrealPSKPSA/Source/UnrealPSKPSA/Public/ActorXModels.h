@@ -38,8 +38,8 @@ struct VMaterial
 
 struct VJointPos
 {
-	FQuat Orientation;
-	FVector Position;
+	FQuat4f Orientation;
+	FVector3f Position;
 	float Length;
 	float XSize;
 	float YSize;
@@ -60,4 +60,17 @@ struct VRawBoneInfluence
 	float Weight;
 	int PointIdx;
 	int BoneIdx;
+};
+
+struct VMorphInfo
+{
+	char Name[64];
+	int VertexCount;
+};
+
+struct VMorphData
+{
+	FVector3f PositionDelta;
+	FVector3f TangentZDelta;
+	int PointIdx;
 };
