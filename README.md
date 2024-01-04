@@ -1,8 +1,8 @@
 # Example client side mod for HogWarp
 
-To get this working, first install the [UE project for HL](https://github.com/narknon/PhoenixUProj).
+To get this working, first install the Prebuilt uProject and Engine found below.
 
-Once you have this installed, just copy and paste the Content directory from this repository to your UE project.
+Once you have this installed, HogWarp Client sample should already be accessible since it was merged into this repository.
 
 You will need to assign a unique chunk id to the Content/HogWarp/Example asset, see [this tutorial](https://modding.wiki/en/hogwartslegacy/developers/getting-started).
 
