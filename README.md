@@ -54,7 +54,7 @@ To add C++ tools to your VS installation, make sure you select Game development 
 
 Make sure you followed the Prerequisites or the 2nd link will not work.
 
-Proceed to the links https://github.com/narknon/PhoenixUProj and https://github.com/narknon/UnrealEngine-CEEnd/tree/4.27-chaos.
+Proceed to the links https://github.com/ddermanov/PhoenixUProj-HogWarpSpecific and https://github.com/ddermanov/UnrealEngine-CEEnd-HogWarpFix/tree/4.27-chaos/.
 
 
 Click on the green arrow to the right, and select download zip.
@@ -124,7 +124,7 @@ A new console window should then open.
 
 Copy/paste the below command into the console window. Make sure you followed the Prerequisites or the clone will not work.
 
-    git clone --branch 4.27-chaos --single-branch https://github.com/narknon/UnrealEngine-CEEnd.git
+    git clone --branch 4.27-chaos --single-branch https://github.com/ddermanov/UnrealEngine-CEEnd-HogWarpFix.git
     
     
 Wait for the download to complete based on the output in the console window.
@@ -153,7 +153,7 @@ Create a new folder that is not within the engine folder to which you would like
 
 Open a new powershell window from within this new folder.  Paste the below command into the powershell window
 
-    git clone https://github.com/narknon/PhoenixUProj.git
+    git clone https://github.com/ddermanov/PhoenixUProj-HogWarpSpecific.git
     
     
 Wait for the download to complete based on the output in the console window.  This should be much quicker than the engine download.
